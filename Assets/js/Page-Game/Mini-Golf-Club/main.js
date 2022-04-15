@@ -4,7 +4,7 @@ function getParentUrl() {
             ? document.referrer
             : document.location.href
         : document.location.href;
-    if (document.referrer.indexOf(' https://jiolkjmdnfsfc312.github.io/') !== -1) {
+    if (document.referrer.indexOf('https://jiolkjmdnfsfc312.github.io/') !== -1) {
         url = 'https://gamedistribution.com/';
     }
     return url;
