@@ -192,7 +192,7 @@
       <!-- User Information-->
       <div class="card user-info-card mb-3">
         <div class="card-body d-flex align-items-center">
-          <div class="user-profile me-3"><img src="../../Assets/img/Settings/Profile/FunGames.png" alt="FunGames" id="img">
+          <div class="user-profile me-3"><img src="../../Assets/img/Settings/Profile/FunGames.png" alt="FunGames"><div id="img" class="img"></div>
             <form action="#">
               <input class="form-control" type="file">
             </form>
@@ -327,7 +327,7 @@
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
         document.getElementById("img").innerHTML = `
-              <p><br /> <img src="${user.photoURL}">
+              <img src="${user.photoURL}">
           `;
         document.getElementById("username").innerHTML = `
               ${user.displayName}
