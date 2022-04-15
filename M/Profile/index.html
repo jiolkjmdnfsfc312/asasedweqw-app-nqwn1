@@ -179,27 +179,27 @@
       <p>&copy; 2021 All rights reserved by<a href="#">Designing World</a></p>
     </div>
   </div>
-  
+
   <div class="page-content-wrapper py-3">
     <div class="container">
       <!-- User Information-->
       <div class="card user-info-card mb-3">
         <div class="card-body d-flex align-items-center">
           <label id="welcome" style="text-align: center;"></label>
+        </div>
       </div>
       <!-- User Meta Data-->
 
       <!-- User Information-->
       <div class="card user-info-card mb-3">
         <div class="card-body d-flex align-items-center">
-          <div class="user-profile me-3"><div id="img" class="img"></div>
-            <form action="#">
-              <input class="form-control" type="file">
-            </form>
+          <div class="me-3">
+            <div id="img" class="img"></div>
           </div>
           <div class="user-info">
             <div class="d-flex align-items-center">
-              <h5 class="mb-1" id="username">Username</h5><span class="badge bg-warning ms-2 rounded-pill" id="verified">Verified</span>
+              <h5 class="mb-1" id="username">Username</h5><span class="badge bg-warning ms-2 rounded-pill"
+                id="verified">Verified</span>
             </div>
             <p class="mb-0" id="email">Email Address</p>
           </div>
@@ -295,32 +295,32 @@
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
   <script>
     var myDate = new Date();
-          var hrs = myDate.getHours();
-      
-          var greet;
-      
-          if (hrs < 12)
-              greet = 'Selamat Pagi';
-          else if (hrs >= 12 && hrs <= 14)
-              greet = 'Selamat Siang';
-          else if (hrs >= 13 && hrs <= 18)
-              greet = 'Selamat Sore';
-          else if (hrs >= 19 && hrs <= 24)
-              greet = 'Selamat Malam';
-      
-          document.getElementById('welcome').innerHTML =
-              '<b>' + greet + '</b> ';
+    var hrs = myDate.getHours();
+
+    var greet;
+
+    if (hrs < 12)
+      greet = 'Selamat Pagi';
+    else if (hrs >= 12 && hrs <= 14)
+      greet = 'Selamat Siang';
+    else if (hrs >= 13 && hrs <= 18)
+      greet = 'Selamat Sore';
+    else if (hrs >= 19 && hrs <= 24)
+      greet = 'Selamat Malam';
+
+    document.getElementById('welcome').innerHTML =
+      '<b>' + greet + '</b> ';
 
     // Your web app's Firebase configuration
     var firebaseConfig = {
       apiKey: "AIzaSyCSdoYwAd5IHNPXO1a5OCSiYWpORLUzyPI",
-  authDomain: "fungamesid.firebaseapp.com",
-  databaseURL: "https://fungamesid-default-rtdb.firebaseio.com",
-  projectId: "fungamesid",
-  storageBucket: "fungamesid.appspot.com",
-  messagingSenderId: "288362351127",
-  appId: "1:288362351127:web:1def18b6d7e9695d982a52",
-  measurementId: "G-HGSY5WTSGZ",
+      authDomain: "fungamesid.firebaseapp.com",
+      databaseURL: "https://fungamesid-default-rtdb.firebaseio.com",
+      projectId: "fungamesid",
+      storageBucket: "fungamesid.appspot.com",
+      messagingSenderId: "288362351127",
+      appId: "1:288362351127:web:1def18b6d7e9695d982a52",
+      measurementId: "G-HGSY5WTSGZ",
     };
     firebase.initializeApp(firebaseConfig);
 
@@ -340,11 +340,11 @@
           `;
         document.getElementById("username-link").innerHTML = `${user.uid}
           `;
-          const linkUsername = document.getElementById("username-link");
-          const link = document.getElementById("link");
-          link.href = link.textContent ;
+        const linkUsername = document.getElementById("username-link");
+        const link = document.getElementById("link");
+        link.href = link.textContent;
 
-      }   else {
+      } else {
         window.location = "login.html";
       }
     });
