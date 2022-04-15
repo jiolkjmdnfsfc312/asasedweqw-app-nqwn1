@@ -156,7 +156,7 @@
       <!-- Setting Card-->
       <div class="card shadow-sm">
         <div class="card-body direction-rtl">
-          <div style="text-align: center;">Version 1.01</div>
+          <div style="text-align: center;">Version 1.0.1</div>
         </div>
       </div>
 
@@ -200,6 +200,80 @@
       </div>
     </div>
   </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+  <script>
+    var myDate = new Date();
+    var hrs = myDate.getHours();
+
+    var greet;
+
+    if (hrs < 12)
+      greet = 'Selamat Pagi';
+    else if (hrs >= 12 && hrs <= 14)
+      greet = 'Selamat Siang';
+    else if (hrs >= 13 && hrs <= 18)
+      greet = 'Selamat Sore';
+    else if (hrs >= 19 && hrs <= 24)
+      greet = 'Selamat Malam';
+
+    document.getElementById('welcome').innerHTML =
+      '<b>' + greet + '</b> ';
+
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCSdoYwAd5IHNPXO1a5OCSiYWpORLUzyPI",
+      authDomain: "fungamesid.firebaseapp.com",
+      databaseURL: "https://fungamesid-default-rtdb.firebaseio.com",
+      projectId: "fungamesid",
+      storageBucket: "fungamesid.appspot.com",
+      messagingSenderId: "288362351127",
+      appId: "1:288362351127:web:1def18b6d7e9695d982a52",
+      measurementId: "G-HGSY5WTSGZ",
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        document.getElementById("img").innerHTML = `
+              <img src="${user.photoURL}">
+          `;
+        document.getElementById("username").innerHTML = `
+              ${user.displayName}
+          `;
+        document.getElementById("email").innerHTML = `
+              ${user.email}
+          `;
+        document.getElementById("verified").innerHTML = `
+              ${user.emailVerified}
+          `;
+        document.getElementById("username-link").innerHTML = `${user.uid}
+          `;
+        const linkUsername = document.getElementById("username-link");
+        const link = document.getElementById("link");
+        link.href = link.textContent;
+
+      } else {
+        window.location = "../../index.html";
+      }
+    });
+
+    function logout() {
+      firebase
+        .auth()
+        .signOut()
+        .then(function () {
+          window.location = "../../index.html";
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+    showData();
+  </script>
   <!-- All JavaScript Files-->
   <script src="../../Assets/js/bootstrap.bundle.min.js"></script>
   <script src="../../Assets/js/jquery.min.js"></script>
