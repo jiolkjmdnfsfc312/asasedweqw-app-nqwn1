@@ -10,7 +10,7 @@ function getParentUrl() {
     return url;
 }
 // Add the self-hosted game url as value of gameUrl.
-var gameUrl = 'https://html5.gamedistribution.com/ebbc1a24e77d4054a88781e0965aef3c/';
+var gameUrl = 'https://html5.gamedistribution.com/ebbc1a24e77d4054a88781e0965aef3c/?gd_sdk_referrer_url=https://gamedistribution.com/games/mini-golf-club';
 document
     .getElementById('FunGames')
     .src = gameUrl + '?gd_sdk_referrer_url=' + getParentUrl();
