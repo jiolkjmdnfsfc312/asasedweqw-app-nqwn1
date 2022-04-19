@@ -3,14 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Screen</title>
     <!-- Css -->
+    
     <link rel="stylesheet" href="../../../../../Assets/css/Page-Game/Mini-Golf-Club/style.css">
+
 </head>
 
 <body>
+    
     <div class="phone" id="lock">
         <img src="../../../../../Assets/img/Logo/logo-no-bg.png" class="img-fungames">
     </div>
@@ -18,10 +22,27 @@
         Please rotate your device!
     </div>
 
+    <div id="myvideo">
     <div id="container" class="fluidMedia">
-            <iframe id="FunGames" frameborder="0"> </iframe>
+        <iframe id="FunGames" frameborder="0"> </iframe>
+    </div>
     </div>
 
+    <button onclick="openFullscreen();">Open Video in Fullscreen Mode</button>
+
     <script src="../../../../../Assets/js/Page-Game/Mini-Golf-Club/main.js"></script>
+
+    <script>
+        var elem = document.getElementById("myvideo");
+        function openFullscreen() {
+          if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+          }
+        }
+        </script>
 </body>
 </html>

@@ -10,7 +10,7 @@ function getParentUrl() {
     return url;
 }
 // Add the self-hosted game url as value of gameUrl.
-var gameUrl = 'https://html5.gamedistribution.com/ebbc1a24e77d4054a88781e0965aef3c/?gd_sdk_referrer_url=https://gamedistribution.com/games/mini-golf-club';
+var gameUrl = 'https://html5.gamedistribution.com/a179408d012f4e9eadc998c663e85c27/?gd_sdk_referrer_url=https://gamedistribution.com/games/bowarcher-tower-attack';
 document
     .getElementById('FunGames')
     .src = gameUrl + '?gd_sdk_referrer_url=' + getParentUrl();
