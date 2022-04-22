@@ -134,9 +134,3 @@ function formatAMPM() {
 }
 
 
-window.addEventListener("online",function(){
-    document.body.innerText = "ONLINE <KELUAR APLIKASI UNTUK MEMULAI ULANG>";
-});
-    window.addEventListener("offline",function(){
-     document.body.innerText = "you are offline";
-});
