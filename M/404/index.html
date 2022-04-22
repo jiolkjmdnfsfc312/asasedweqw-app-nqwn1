@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags-->
   <!-- Title-->
-  <title>FunGames | Setting</title>
+  <title>AC-Mobile UI Neumorphism</title>
   <!-- Fonts-->
   <link rel="preconnect" href="https://fonts.gstatic.com/">
   <link
@@ -39,12 +39,8 @@
       <div class="sr-only">Loading...</div>
     </div>
   </div>
-  <!-- Preloader-->
-
   <!-- Internet Connection Status-->
   <div class="internet-connection-status" id="internetStatus"></div>
-  <!-- Internet Connection Status-->
-
   <!-- Dark mode switching-->
   <div class="dark-mode-switching">
     <div class="d-flex w-100 h-100 align-items-center justify-content-center">
@@ -64,8 +60,6 @@
       </div>
     </div>
   </div>
-  <!-- Dark mode switching-->
-
   <!-- RTL mode switching-->
   <div class="rtl-mode-switching">
     <div class="d-flex w-100 h-100 align-items-center justify-content-center">
@@ -85,80 +79,88 @@
       </div>
     </div>
   </div>
-  <!-- RTL mode switching-->
-
+  <div id="setting-popup-overlay"></div>
+  <!-- Setting Popup Card-->
+  <div class="card setting-popup-card shadow-lg" id="settingCard">
+    <div class="card-body">
+      <div class="container">
+        <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+          <p class="mb-0">Settings</p><a class="btn-close" id="settingCardClose" href="#"></a>
+        </div>
+        <div class="single-setting-panel">
+          <div class="form-check form-switch mb-2">
+            <input class="form-check-input" type="checkbox" id="availabilityStatus" checked>
+            <label class="form-check-label" for="availabilityStatus">Availability status</label>
+          </div>
+        </div>
+        <div class="single-setting-panel">
+          <div class="form-check form-switch mb-2">
+            <input class="form-check-input" type="checkbox" id="sendMeNotifications" checked>
+            <label class="form-check-label" for="sendMeNotifications">Send me notifications</label>
+          </div>
+        </div>
+        <div class="single-setting-panel">
+          <div class="form-check form-switch mb-2">
+            <input class="form-check-input" type="checkbox" id="darkSwitch">
+            <label class="form-check-label" for="darkSwitch">Dark mode</label>
+          </div>
+        </div>
+        <div class="single-setting-panel">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="rtlSwitch">
+            <label class="form-check-label" for="rtlSwitch">RTL mode</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Header Area-->
   <div class="header-area" id="headerArea">
     <div class="container">
       <!-- Header Content-->
-      <div class="header-content header-style-four position-relative d-flex align-items-center justify-content-between">
+      <div class="header-content position-relative d-flex align-items-center justify-content-between">
         <!-- Back Button-->
-        <div class="back-button"><a href="../../index.html"><svg width="32" height="32" viewBox="0 0 16 16"
+        <div class="back-button"><a href="/"><svg width="32" height="32" viewBox="0 0 16 16"
               class="bi bi-arrow-left-short" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
                 d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
             </svg></a></div>
         <!-- Page Title-->
         <div class="page-heading">
-          <h6 class="mb-0">Settings</h6>
+          <h6 class="mb-0">Page Not found</h6>
         </div>
-        <!-- User Profile-->
-        <div class="user-profile-wrapper"><a class="user-profile-trigger-btn" href="#"><img
-              src="../../Assets/img/Logo/logo.png" alt="FunGames"></a></div>
+        <!-- Settings-->
+        <div class="setting-wrapper"><a class="setting-trigger-btn" id="settingTriggerBtn" href="#"><svg width="18"
+              height="18" viewBox="0 0 16 16" class="bi bi-gear" fill="url(#gradientSettings)"
+              xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient spreadMethod="pad" id="gradientSettings" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;" />
+                  <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;" />
+                </linearGradient>
+              </defs>
+              <path fill-rule="evenodd"
+                d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z" />
+              <path fill-rule="evenodd"
+                d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z" />
+            </svg><span></span></a></div>
       </div>
     </div>
   </div>
+  <!-- Page Content Wrapper-->
   <div class="page-content-wrapper py-3">
     <div class="container">
-      <!-- Setting Card-->
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body direction-rtl">
-          <p>Settings</p>
-          <div class="single-setting-panel">
-            <div class="form-check form-switch mb-2">
-              <input class="form-check-input" type="checkbox" id="darkSwitch">
-              <label class="form-check-label" for="darkSwitch">Dark mode</label>
-            </div>
-          </div>
-          <div class="single-setting-panel">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="rtlSwitch">
-              <label class="form-check-label" for="rtlSwitch">RTL mode</label>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-9 col-md-8 col-lg-6">
+          <div class="card">
+            <div class="card-body px-5 text-center"><img class="mb-4" src="../../Assets/img/404/404-error.png" alt="FunGames">
+              <h4>OOPS... <br> Page not found!</h4>
+              <p class="mb-4">We couldn't find any results for your search. Try again.</p><a
+                class="btn btn-creative btn-danger" href="/">Go to Home</a>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Setting Card-->
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body direction-rtl">
-          <p>Account</p>
-          <div class="single-setting-panel"><a href="../404/">
-              <div class="icon-wrapper"><i class="bi bi-person"></i></div>Profile
-            </a></div>
-          <div class="single-setting-panel"><a href="Privacy-Police/">
-              <div class="icon-wrapper bg-danger"><i class="bi bi-shield-lock"></i></div>Privacy Policy
-            </a></div>
-        </div>
-      </div>
-
-      <!-- Setting Card-->
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body direction-rtl">
-          <p>Contact Us</p>
-          <div class="single-setting-panel"><a href="page-user-profile.html">
-              <div class="icon-wrapper"><i class="bi bi-person"></i></div>Contact
-            </a></div>
-        </div>
-      </div>
-
-      <!-- Setting Card-->
-      <div class="card shadow-sm">
-        <div class="card-body direction-rtl">
-          <div style="text-align: center;">Version 1.0.1</div>
-        </div>
-      </div>
-
     </div>
   </div>
   <!-- Footer Nav-->
@@ -169,7 +171,7 @@
       <div class="footer-nav position-relative">
         <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
           <!-- Home Page -->
-          <li><a href="../../index.html"><svg width="20" height="20" viewBox="0 0 16 16" class="bi bi-house"
+          <li><a href="/"><svg width="20" height="20" viewBox="0 0 16 16" class="bi bi-house"
                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                   d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
@@ -187,7 +189,7 @@
               <!-- Game Page -->
 
               <!-- Setting Page -->
-          <li class="active"><a href="../Settings/"><svg width="20" height="20" viewBox="0 0 16 16" class="bi bi-gear"
+          <li><a href="../Settings/"><svg width="20" height="20" viewBox="0 0 16 16" class="bi bi-gear"
                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                   d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z" />
@@ -199,80 +201,6 @@
       </div>
     </div>
   </div>
-
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
-  <script>
-    var myDate = new Date();
-    var hrs = myDate.getHours();
-
-    var greet;
-
-    if (hrs < 12)
-      greet = 'Selamat Pagi';
-    else if (hrs >= 12 && hrs <= 14)
-      greet = 'Selamat Siang';
-    else if (hrs >= 13 && hrs <= 18)
-      greet = 'Selamat Sore';
-    else if (hrs >= 19 && hrs <= 24)
-      greet = 'Selamat Malam';
-
-    document.getElementById('welcome').innerHTML =
-      '<b>' + greet + '</b> ';
-
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyCSdoYwAd5IHNPXO1a5OCSiYWpORLUzyPI",
-      authDomain: "fungamesid.firebaseapp.com",
-      databaseURL: "https://fungamesid-default-rtdb.firebaseio.com",
-      projectId: "fungamesid",
-      storageBucket: "fungamesid.appspot.com",
-      messagingSenderId: "288362351127",
-      appId: "1:288362351127:web:1def18b6d7e9695d982a52",
-      measurementId: "G-HGSY5WTSGZ",
-    };
-    firebase.initializeApp(firebaseConfig);
-
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        document.getElementById("img").innerHTML = `
-              <img src="${user.photoURL}">
-          `;
-        document.getElementById("username").innerHTML = `
-              ${user.displayName}
-          `;
-        document.getElementById("email").innerHTML = `
-              ${user.email}
-          `;
-        document.getElementById("verified").innerHTML = `
-              ${user.emailVerified}
-          `;
-        document.getElementById("username-link").innerHTML = `${user.uid}
-          `;
-        const linkUsername = document.getElementById("username-link");
-        const link = document.getElementById("link");
-        link.href = link.textContent;
-
-      } else {
-        window.location = "../../index.html";
-      }
-    });
-
-    function logout() {
-      firebase
-        .auth()
-        .signOut()
-        .then(function () {
-          window.location = "../../index.html";
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-    showData();
-  </script>
   <!-- All JavaScript Files-->
   <script src="../../Assets/js/bootstrap.bundle.min.js"></script>
   <script src="../../Assets/js/jquery.min.js"></script>
@@ -294,5 +222,6 @@
   <!-- PWA-->
   <script src="../../Assets/js/pwa.js"></script>
 </body>
+
 
 </html>
