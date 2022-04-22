@@ -111,7 +111,7 @@
     <ul class="sidenav-nav ps-0">
 
       <!-- Share -->
-      <li><a >
+      <li><a>
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172"
             style=" fill:#000000;">
             <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
@@ -222,6 +222,22 @@
         </div>
         <!-- Footer Nav-->
 
+        <!-- Disabled Href No Internet -->
+        <script>
+          setInterval(function () {
+            var status = navigator.onLine ? 'Your internet connection is back' : 'No Internet Connection!';/* check whether online */
+            document.getElementById('internetStatus').innerHTML = status; /* display 'anchor' somewhere */
+
+            if (status == 'No Internet Connection!') {
+              var internetStatus = document.getElementsByTagName("a");
+              for (var i = 0; i < internetStatus.length; i++) {
+                internetStatus[i].onclick = function (e) { event.preventDefault(); location.reload(); };
+              };
+            }
+          }, 400);
+        </script>
+        <!-- Disabled Href No Internet -->
+
         <!-- All JavaScript Files-->
         <script src="../../../../Assets/js/bootstrap.bundle.min.js"></script>
         <script src="../../../../Assets/js/jquery.min.js"></script>
@@ -242,7 +258,7 @@
         <script src="../../../../Assets/js/default/clipboard.js"></script>
         <!-- PWA-->
         <script src="../../../../Assets/js/pwa.js"></script>
-        
+
 </body>
 
 </html>

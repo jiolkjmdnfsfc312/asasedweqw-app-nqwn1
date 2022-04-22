@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+console.clear();
+var throwProps = false // try true to enable smooth tweening on release;
+Draggable.create(".container", {
+	type:"y",
+	bounds:"body",
+	edgeResistance:0.8, //controls how far you can pull item out of bounds
+	throwProps:throwProps,
+	onDrag:function(){
+		console.log(this.y);
+	}
+})

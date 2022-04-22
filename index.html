@@ -44,7 +44,7 @@
   <!-- Preloader-->
 
   <!-- Internet Connection Status-->
-  <div class="internet-connection-status" id="internetStatus anchor"></div>
+  <div class="internet-connection-status" id="internetStatus"></div>
   <!-- Internet Connection Status-->
 
   <!-- Header Area-->
@@ -406,17 +406,18 @@
   <!-- Disabled Href No Internet -->
   <script>
     setInterval(function(){
-            var status = navigator.onLine ? 'enabled-link' : 'disabled-link';/* check whether online */
-            document.getElementById('anchor').innerHTML = status; /* display 'anchor' somewhere */
+            var status = navigator.onLine ? 'Your internet connection is back' : 'No Internet Connection!';/* check whether online */
+            document.getElementById('internetStatus').innerHTML = status; /* display 'anchor' somewhere */
         
-            if(status ==  'disabled-link') {
-                var anchors = document.getElementsByTagName("a");
-                for (var i = 0; i < anchors.length; i++) {
-                    anchors[i].onclick = function(e) {e.preventDefault();};
+            if(status ==  'No Internet Connection!') {
+                var internetStatus = document.getElementsByTagName("a");
+                for (var i = 0; i < internetStatus.length; i++) {
+                  internetStatus[i].onclick = function(e) {event.preventDefault();location.reload();};
                 };
             }
         }, 400);
   </script>
+  <!-- Disabled Href No Internet -->
 
   <!--Firebase-->
   <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
