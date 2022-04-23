@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-console.clear();
-var throwProps = false // try true to enable smooth tweening on release;
-Draggable.create(".container", {
-	type:"y",
-	bounds:"body",
-	edgeResistance:0.8, //controls how far you can pull item out of bounds
-	throwProps:throwProps,
-	onDrag:function(){
-		console.log(this.y);
-	}
-})
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Detect Internet Connection | Codequs</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+
+  <style>
+	.internetStatus{
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		vertical-align: middle;
+		justify-content:center;
+		color: white;
+		display: flex;
+        align-items:center;
+        justify-content:center;
+		}
+		</style>
+</head>
+<body>
+
+	<div id="internetStatus" class="internetStatus"></div>
+	<button onClick="window.location.reload();">Refresh Page</button>
+
+	<script>
+
+		const internetStatus = document.getElementById("internetStatus");
+		
+		window.addEventListener('load', function(event){
+			detectInternet();
+		});
+		window.addEventListener('online', function(event){
+			detectInternet();
+		});
+		window.addEventListener('offline', function(event){
+			detectInternet();
+		});
+		
+		function detectInternet(){
+		
+		  if(navigator.onLine){
+			internetStatus.textContent="Your internet connection is back";
+			 internetStatus.style.backgroundColor="none";
+		  }else{
+			internetStatus.textContent="No Internet Connection";
+			location.reload();
+			internetStatus.style.backgroundColor="red";
+		  }
+		}
+		</script>
+</body>
+</html>
