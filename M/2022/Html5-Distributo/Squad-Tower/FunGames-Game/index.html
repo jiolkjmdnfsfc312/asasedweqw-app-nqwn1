@@ -8,297 +8,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Screen</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500'><link rel="stylesheet" href="./style.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500'>
+    <link rel="stylesheet" href="./style.css">
     <!-- Css -->
-    
+
     <link rel="stylesheet" href="../../../../../Assets/css/Page-Game/Squad-Tower/style.css">
-    <style>
-        .container {
-    position: relative;
-    overflow-x: hidden;
-    height: 100%;
-    width: 100%;
-}
 
-/* Main */
-
-.main {
-    display: table;
-    height: 100%;
-    position: relative;
-    transition-property: transform;
-}
-
-.mask {
-    display: table-row;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    pointer-events: none;
-    transition-property: opacity;
-}
-
-header {
-    background-color: #3498db;
-    background-image: linear-gradient(to bottom, #3498db 0%, #217dbb 100%);
-    padding: 100px 50px;
-    text-align: center;
-}
-
-header h1 {
-    color: #fff;
-    font-size: 3em;
-    line-height: 1;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-}
-
-.content {
-    margin: 50px 50px;
-}
-
-/* Sidebar */
-
-.sidebar {
-    position: fixed;
-    z-index: 5;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 240px;
-    background: #1d2127;
-    border-right: 3px solid #0f1114;
-    overflow: hidden;
-    transform: translate3d(-260px, 0, 0);
-    transition-property: transform;
-    will-change: transform, -webkit-transform;
-}
-
-.sidebar, .sidebar a {
-    color: #abb4be;
-}
-
-.nav {
-    margin-top: 100px;
-}
-
-.nav-items {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.nav-title {
-    display: block;
-    padding: 10px 50px;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: #465162;
-}
-
-.nav-link {
-    display: block;
-    padding: 10px 50px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.nav-link:hover {
-    background-color: #282d36;
-}
-
-.sidebar-separator {
-    margin: 30px;
-    height: 2px;
-    background-color: #000;
-    border-bottom: 1px solid #2b313a;
-}
-
-/* Hamburger Icon */
-
-.hamburger {
-    display: block;
-    position: fixed;
-    left: 20px;
-    top: 20px;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 5px;
-    background-color: #3498db;
-    border: 2px solid #ddd;
-    padding: 10px 0px;
-    width: 45px;
-    height: 20px;
-    transition-property: background-color, border-color;
-}
-
-.bar {
-    display: block;
-    position: relative;
-    background-color: #ddd;
-    width: 50%;
-    height: 4px;
-    border-radius: 2px;
-    margin: 0 auto;
-    transition-property: transform, opacity, background-color, width;
-}
-
-.bar:first-child {
-    top: 0;
-}
-
-.bar:nth-child(2) { 
-    opacity: 1;
-}
-
-.bar:last-child {
-    bottom: 0;
-}
-
-.hamburger:hover {
-    border-color: #fff;
-}
-
-.hamburger:hover .bar {
-    background-color: #fff;
-}
-
-.bar + .bar {
-    margin-top: 5px;
-}
-
-/* Animation */
-
-.main, .sidebar, .mask, .hamburger, .bar {
-    transition-duration: 0.3s;
-    transition-timing-function: cubic-bezier(.694, .0482, .335, 1);
-}
-
-/* Show Sidebar */
-
-.show-sidebar .main {
-    transform: translate3d(260px, 0, 0);
-}
-
-.show-sidebar .sidebar {
-    transform: translate3d(0, 0, 0);
-}
-
-.show-sidebar .mask {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.show-sidebar .hamburger {
-    background-color: #282d36;
-    border-color: #0f1114;
-}
-
-.show-sidebar .bar {
-    background-color: #abb4be;
-}
-
-.show-sidebar .bar:first-child {
-    width: 120%;
-    transform: rotate(45deg) translate(5px, 8px);
-}
-
-.show-sidebar .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.show-sidebar .bar:last-child {
-    width: 120%;
-    transform: rotate(-45deg) translate(4px, -8px);
-}
-    </style>
 </head>
 
 <body id="contento">
 
     <!-- partial:index.partial.html -->
-<div class="container">
-    <aside class="sidebar">
-        <nav class="nav">
-            <ul class="nav-items">
-                <li class="nav-title">FunGames</li>
-                <li><a onclick="goFullscreen('contento'); return false" class="nav-link">Fullscreen</a></li>
-            </ul>
-        </nav>
-    </aside>
-    <div class="hamburger">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+    <div class="container">
+        <aside class="sidebar">
+            <nav class="nav">
+                <ul class="nav-items">
+                    <li class="nav-title">FunGames</li>
+                    <li><a onclick="goFullscreen('contento'); return false" class="nav-link">Fullscreen</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
     </div>
-</div>
 
-<div class="phone" id="lock">
-    <img src="../../../../../Assets/img/Logo/logo-no-bg.png" class="img-fungames">
-</div>
-<div class="message" id="lock">
-    Please rotate your device!
-</div>
+    <div class="phone" id="lock">
+        <img src="../../../../../Assets/img/Logo/logo-no-bg.png" class="img-fungames">
+    </div>
+    <div class="message" id="lock">
+        Please rotate your device!
+    </div>
 
-<div id="container" class="fluidMedia">
-    <iframe id="FunGames" frameborder="0"></iframe>
-</div>
+    <div id="container" class="fluidMedia">
+        <iframe id="FunGames" frameborder="0"></iframe>
+    </div>
 
     <script src="../../../../../Assets/js/Page-Game/Squad-Tower/main.js"></script>
-
-    <script>
-        var container = document.querySelector('.container');
-var main = document.querySelector('.main');
-
-function toggleSidebar(){
-    isShowingSidebar() ? hideSidebar() : showSidebar();
-}
-
-function showSidebar(){
-    container.classList.add('show-sidebar');
-}
-
-function hideSidebar(){
-    container.classList.remove('show-sidebar');
-}
-
-function isShowingSidebar(){
-    return container.classList.contains('show-sidebar');
-}
-
-document.querySelector('.hamburger').addEventListener('click', toggleSidebar, false);
-
-container.addEventListener('click', function(e){
-    if(isShowingSidebar() && main.contains(e.target)){
-        e.preventDefault();
-        hideSidebar();
-    }
-}, true);
-
-// FullScreen
-function goFullscreen(id) {
-        // Get the element that we want to take into fullscreen mode
-        var element = document.getElementById(id);
-
-        // These function will not exist in the browsers that don't support fullscreen mode yet,
-        // so we'll have to check to see if they're available before calling them.
-
-        if (element.mozRequestFullScreen) {
-            // This is how to go into fullscren mode in Firefox
-            // Note the "moz" prefix, which is short for Mozilla.
-            element.mozRequestFullScreen();
-        } else if (element.webkitRequestFullScreen) {
-            // This is how to go into fullscreen mode in Chrome and Safari
-            // Both of those browsers are based on the Webkit project, hence the same prefix.
-            element.webkitRequestFullScreen();
-        }
-        // Hooray, now we're in fullscreen mode!
-    }
-    </script>
 </body>
+
 </html>
