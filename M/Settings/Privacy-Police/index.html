@@ -339,13 +339,6 @@
 
   <!-- Disabled Href No Internet -->
   <script>
-    window.addEventListener("online", function () {
-			document.body.innerText = "ONLINE <KELUAR APLIKASI UNTUK MEMULAI ULANG>";
-		});
-		window.addEventListener("offline", function () {
-			document.body.innerText = "you are offline";
-		});
-    
     setInterval(function(){
             var status = navigator.onLine ? 'Your internet connection is back' : 'No Internet Connection!';/* check whether online */
             document.getElementById('internetStatus').innerHTML = status; /* display 'anchor' somewhere */
