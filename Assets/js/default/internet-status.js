@@ -18,6 +18,7 @@
 
     window.addEventListener('online', function () {
         internetStatus.text(onlineText).addClass("internet-is-back").removeClass("internet-is-lost").delay("5000").fadeOut(500);
+        location.reload();
     });
 
     $(".offline-detection").on("click", function () {
@@ -26,6 +27,7 @@
 
     $(".online-detection").on("click", function () {
         internetStatus.text(onlineText).addClass("internet-is-back").removeClass("internet-is-lost").fadeIn(500).delay("3000").fadeOut(500);
+        location.reload();
     });
 
 })(jQuery);
