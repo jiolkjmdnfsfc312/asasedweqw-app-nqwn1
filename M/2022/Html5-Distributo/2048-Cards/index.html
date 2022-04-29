@@ -153,20 +153,19 @@
         <div class="card-body">
           <div class="product-gallery owl-carousel">
             <div class="single-product-image"><a class="gallery-img2"
-                href="../../../../Assets/img/Thumbnail-Game/Ghost-3D/Ghost 3D-512x512.jpg"
+                href="../../../../Assets/img/Thumbnail-Game/2048-Cards/2048 Cards - 512x512.jpeg"
                 data-effect="mfp-zoom-in"><img class="rounded"
-                  src="../../../../Assets/img/Thumbnail-Game/Ghost-3D/Ghost 3D-512x512.jpg"
-                  alt="FunGames"></a>
+                  src="../../../../Assets/img/Thumbnail-Game/2048-Cards/2048 Cards - 512x512.jpeg" alt="FunGames"></a>
             </div>
           </div>
         </div>
       </div>
       <div class="card product-details-card mb-3 direction-rtl">
         <div class="card-body">
-          <h3>Ghost 3D</h3>
+          <h3>2048 Cards</h3>
           <h6>Game By <b>FunGames</b></h6>
           <p>
-            Enter the room, build weapons, and protect yourself</p>
+            2048 Cards is an addicting card game based on the 2048 mechanism.</p>
           <div class="input-group">
             <a class="btn btn-primary w-50" href="FunGames-Game/">Start Game</a>
           </div>
@@ -215,17 +214,17 @@
 
         <!-- Disabled Href No Internet -->
         <script>
-          setInterval(function(){
+          setInterval(function () {
             var status = navigator.onLine ? 'Your internet connection is back' : 'No Internet Connection!';/* check whether online */
             document.getElementById('internetStatus').innerHTML = status; /* display 'anchor' somewhere */
-        
-            if(status ==  'No Internet Connection!') {
-                var internetStatus = document.getElementsByTagName("a");
-                for (var i = 0; i < internetStatus.length; i++) {
-                  internetStatus[i].onclick = function(e) {event.preventDefault();};
-                };
+
+            if (status == 'No Internet Connection!') {
+              var internetStatus = document.getElementsByTagName("a");
+              for (var i = 0; i < internetStatus.length; i++) {
+                internetStatus[i].onclick = function (e) { event.preventDefault(); };
+              };
             }
-        }, 400);
+          }, 400);
         </script>
         <!-- Disabled Href No Internet -->
 
