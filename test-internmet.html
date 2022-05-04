@@ -7,52 +7,54 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 
   <style>
-	.internetStatus{
-		position: fixed;
-		top: 0px;
-		left: 0px;
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		vertical-align: middle;
-		justify-content:center;
-		color: white;
-		display: flex;
-        align-items:center;
-        justify-content:center;
-		}
+	#landscape{
+         position: absolute;
+         top: 0px;
+         left: 0px;
+         background: #000000;
+         width: 100%;
+         height: 100%;
+         display: none; 
+         z-index: 20000;
+         opacity: 0.9;
+         margin:0 auto;
+}
+#landscape div{
+
+        color: #FFFFFF;                                  
+        opacity: 1;
+        top: 50%;
+        position: absolute;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+}
 		</style>
 </head>
-<body>
 
-	<div id="internetStatus" class="internetStatus"></div>
-	<button onClick="window.location.reload();">Refresh Page</button>
+
+<body onload="doOnOrientationChange();">
+	<div id="landscape"><div>"Rotate Device to Portrait"<br>FunGames</div></div>
 
 	<script>
+		function doOnOrientationChange()
+      {
+        switch(window.orientation) 
+        {  
+          case -90:                 
+                 document.getElementById("landscape").style.display="block";
+                 break;
+          case 90:              
+                document.getElementById("landscape").style.display="block";                 
+                break;
+         default:                   
+                document.getElementById("landscape").style.display="none";
+                break;                            
+        }
+      }
 
-		const internetStatus = document.getElementById("internetStatus");
-		
-		window.addEventListener('load', function(event){
-			detectInternet();
-		});
-		window.addEventListener('online', function(event){
-			detectInternet();
-		});
-		window.addEventListener('offline', function(event){
-			detectInternet();
-		});
-		
-		function detectInternet(){
-		
-		  if(navigator.onLine){
-			internetStatus.textContent="Your internet connection is back";
-			 internetStatus.style.backgroundColor="none";
-		  }else{
-			internetStatus.textContent="No Internet Connection";
-			location.reload();
-			internetStatus.style.backgroundColor="red";
-		  }
-		}
-		</script>
+      //Listen to orientation change
+      window.addEventListener('orientationchange', doOnOrientationChange);  
+	</script>
 </body>
 </html>
