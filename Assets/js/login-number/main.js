@@ -38,6 +38,7 @@ if(window.location.pathname != '../../index.html'){
         'size': 'invisible',
         'callback': (response) => {
             console.log('captcha verified');
+            window.location.href = 'http://www.google.com';
         }
     });
     const appVerifier = window.recaptchaVerifier;
