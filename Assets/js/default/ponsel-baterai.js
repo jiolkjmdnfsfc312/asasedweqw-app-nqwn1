@@ -10,7 +10,7 @@ function initBattery(){
         updateBattery = () =>{
             /* 1. We update the number level of the battery */
             let level = Math.floor(batt.level * 100)
-            batteryPercentage.innerHTML = level+ '% ( Uji Coba )'
+            batteryPercentage.innerHTML = level+ '%'
 
             /* 2. We update the background level of the battery */
             batteryLiquid.style.height = `${parseInt(batt.level * 100)}%`
