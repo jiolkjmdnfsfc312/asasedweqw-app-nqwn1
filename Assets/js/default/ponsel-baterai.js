@@ -24,7 +24,7 @@ function initBattery(){
                 batteryStatus.innerHTML = `Low battery <i class="ri-plug-line animated-red"></i>`
                 let timerInterval
                 Swal.fire({
-                    html: 'Segera Isi Baterai Ponsel Kamu!!.',
+                    html: 'Segera Isi Baterai Ponsel Kamu!!',
                     timerProgressBar: true,
                     timer: 5000,
                     didOpen: () => {

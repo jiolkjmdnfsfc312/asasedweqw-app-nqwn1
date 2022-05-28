@@ -15,9 +15,8 @@
   <!-- Fonts-->
   <link rel="preconnect" href="https://fonts.gstatic.com/">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
   <link rel="stylesheet" href="../../../../Assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../../../Assets/css/animate.css">
@@ -30,6 +29,8 @@
   <link rel="stylesheet" href="../../../../Assets/css/apexcharts.css">
   <!-- Core Stylesheet-->
   <link rel="stylesheet" href="../../../../Assets/css/style.css">
+  <!-- Ponsel Baterai-->
+  <link rel="stylesheet" href="../../../../Assets/css/ponsel-baterai.css">
   <!-- Web App Manifest-->
   <link rel="manifest" href="manifest.json">
 </head>
@@ -104,7 +105,7 @@
       <div class="user-profile"><img src="../../../../Assets/img/Logo/logo.png" alt="FunGames"></div>
       <!-- User Info-->
       <div class="user-info">
-        <h6 class="user-name mb-0">FunGames</h6><span>Game</span>
+        <h6 class="user-name mb-0 battery__percentage battery__liquid">FunGames</h6><span class="battery__status">Games</span>
       </div>
     </div>
     <!-- Sidenav Nav-->
@@ -243,6 +244,8 @@
         </script>
         <!-- Disabled Href No Internet -->
 
+        <!-- Sweet Alert Ponsel Baterai -->
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2'></script>
         <!-- All JavaScript Files-->
         <script src="../../../../Assets/js/bootstrap.bundle.min.js"></script>
         <script src="../../../../Assets/js/jquery.min.js"></script>
@@ -263,6 +266,8 @@
         <script src="../../../../Assets/js/default/clipboard.js"></script>
         <!-- PWA-->
         <script src="../../../../Assets/js/pwa.js"></script>
+        <!-- Ponsel Baterai-->
+        <script src="../../../../Assets/js/default/ponsel-baterai.js"></script>
 </body>
 
 </html>
