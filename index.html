@@ -16,6 +16,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
     rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
   <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="Assets/css/animate.css">
@@ -45,6 +46,95 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
+
+  <style>
+
+
+/* Full battery icon color */
+.green-color {
+  background: var(--gradient-color-green);
+}
+
+/* Battery charging animation */
+.animated-green {
+  background: var(--gradient-color-green);
+  animation: animated-charging-battery 1.2s infinite alternate;
+}
+
+/* Low battery animation */
+.animated-red {
+  background: var(--gradient-color-red);
+  animation: animated-low-battery 1.2s infinite alternate;
+}
+
+.animated-green,
+.animated-red,
+.green-color {
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@keyframes animated-charging-battery {
+  0% {
+    text-shadow: none;
+  }
+  100% {
+    text-shadow: 0 0 6px hsl(92, 90%, 68%);
+  }
+}
+
+@keyframes animated-low-battery {
+  0% {
+    text-shadow: none;
+  }
+  100% {
+    text-shadow: 0 0 8px hsl(7, 89%, 46%);
+  }
+}
+
+/* Liquid battery with gradient color */
+.gradient-color-red,
+.gradient-color-red::after {
+  background: var(--gradient-color-red);
+}
+
+.gradient-color-orange,
+.gradient-color-orange::after {
+  background: var(--gradient-color-orange);
+}
+
+.gradient-color-yellow,
+.gradient-color-yellow::after {
+  background: var(--gradient-color-yellow);
+}
+
+.gradient-color-green,
+.gradient-color-green::after {
+  background: var(--gradient-color-green);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .battery__card {
+    zoom: .8;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 430px) {
+  .battery__card {
+    width: 312px;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .battery__card {
+    zoom: 1.5;
+  }
+}
+  </style>
 </head>
 
 <body>
@@ -124,7 +214,7 @@
       <div class="user-profile"><img src="Assets/img/Logo/logo.png" alt="FunGames"></div>
       <!-- User Info-->
       <div class="user-info">
-        <h6 class="user-name mb-0">FunGames</h6><span>Games</span>
+        <h6 class="user-name mb-0 battery__percentage battery__liquid">FunGames</h6><span class="battery__status">Games</span>
       </div>
     </div>
 
@@ -192,10 +282,12 @@
       </li>
       <!-- Logout -->
     </ul>
+
     <!-- Social Info-->
     <div class="social-info-wrap">
       <a href="https://www.instagram.com/fungamesid/"><i class="fa fa-instagram"></i></a>
     </div>
+    
     <!-- Copyright Info-->
     <div class="copyright-info">
       <p>&copy; 2022 All Rights Reserved By<a href="/">FunGames</a></p>
@@ -210,7 +302,7 @@
         style="background-image: url('Assets/img/Slider-Home/Hoops-Champ-3D/Hoops\ Champ\ 3D\ -\ 512x384.jpeg')">
         <div class="slide-content h-100 d-flex align-items-center text-center">
           <div class="container">
-            <h4 class="text-white mb-1" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="500ms">/Hoops Champ 3D</h4>
+            <h4 class="text-white mb-1" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="500ms">Hoops Champ 3D</h4>
             <p class="text-white mb-4" data-animation="fadeInUp" data-delay="400ms" data-wow-duration="500ms">Mainkan
               Keseruan Game Ini Sekarang.</p><a class="btn btn-creative btn-warning"
               href="M/1. Start-Game/2022/Hoops-Champ-3D/" data-animation="fadeInUp" data-delay="800ms"
@@ -429,6 +521,6 @@
   <script src="Assets/js/default/clipboard.js"></script>
   <!-- PWA-->
   <script src="Assets/js/pwa.js"></script>
-
+  <script src="battery-level-indicator-main/assets/js/main.js"></script>
 </body>
 </html>
