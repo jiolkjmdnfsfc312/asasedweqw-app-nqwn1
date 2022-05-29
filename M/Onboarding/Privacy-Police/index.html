@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://opengraph.org/schema/">
+
+<head>
+
+     <meta property="og:title" content="Introducing Tock, a reservation system like no other" />
+     <meta property="fb:page_id" content="43929265776" />
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+     <title></title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+     <style type="text/css">
+          /* CLIENT-SPECIFIC RESET */
+          body,
+          table,
+          td,
+          a {
+               -webkit-text-size-adjust: 100%;
+               -ms-text-size-adjust: 100%;
+          }
+
+          /* Prevent WebKit and Windows mobile changing default text sizes */
+
+          table,
+          td {
+               mso-table-lspace: 0pt;
+               mso-table-rspace: 0pt;
+          }
+
+          /* Remove spacing between tables in Outlook 2007 and up */
+
+          img {
+               -ms-interpolation-mode: bicubic;
+          }
+
+          /* Allow smoother rendering of resized image in Internet Explorer */
+
+          /* DEVICE-SPECIFIC RESET */
+          a[x-apple-data-detectors] {
+               color: inherit !important;
+               text-decoration: none !important;
+               font-size: inherit !important;
+               font-family: inherit !important;
+               font-weight: inherit !important;
+               line-height: inherit !important;
+          }
+
+          /* iOS BLUE LINKS */
+
+          /* RESET */
+          img {
+               border: 0;
+               height: auto;
+               line-height: 100%;
+               outline: none;
+               text-decoration: none;
+               display: block;
+          }
+
+          table {
+               border-collapse: collapse;
+          }
+
+          body {
+               height: 100% !important;
+               margin: 0 !important;
+               padding: 0 !important;
+               width: 100% !important;
+          }
+
+          /* VARIABLES */
+          .textAlignLeft {
+               text-align: left;
+          }
+
+          .textAlignRight {
+               text-align: right;
+          }
+
+          .textAlignCenter {
+               text-align: center;
+          }
+
+          .desktopHide {
+               display: none;
+          }
+
+          .floatleft {
+               float: left;
+          }
+
+          /* TYPOGRAPHY */
+          body {
+               font-family: "Asap", Helvetica, Arial, sans-serif;
+               color: #1E2332;
+               -webkit-font-smoothing: antialiased;
+               -moz-osx-font-smoothing: grayscale;
+               font-smoothing: always;
+               text-rendering: optimizeLegibility;
+          }
+
+          .h1 {
+               vertical-align: middle;
+               font-size: 48px;
+               line-height: 54px;
+               font-family: 'Avenir', "Asap", Helvetica, sans-serif;
+               color: #1E2332;
+               font-weight: bold;
+               font-weight: 600;
+          }
+
+          .h2 {
+               vertical-align: middle;
+               font-size: 50px;
+               line-height: 30px;
+               font-family: 'Avenir', "Asap", Helvetica, sans-serif;
+               color: #1E2332;
+               font-weight: bold;
+               font-weight: 600;
+          }
+
+          .textBig {
+               font-size: 20px;
+               line-height: 30px;
+               font-family: 'Avenir', "Asap", Helvetica, sans-serif;
+               font-weight: normal;
+               font-weight: 400;
+               color: #4B505B;
+          }
+
+          .textMedium {
+               font-size: 18px;
+               line-height: 27px;
+               font-family: 'Avenir', "Asap", Helvetica, sans-serif;
+               font-weight: normal;
+               font-weight: 400;
+               color: #4B505B;
+          }
+
+          .textSmall {
+               font-size: 16px;
+               line-height: 24px;
+               font-family: 'Avenir', "Asap", Helvetica, sans-serif;
+               font-weight: normal;
+               font-weight: 400;
+               color: #4B505B;
+          }
+
+          .text--bold {
+               font-weight: bold;
+               font-weight: 600;
+          }
+
+          .text--link {
+               font-weight: normal;
+               font-weight: 400;
+               text-decoration: underline;
+          }
+
+          .text--linkNoUnderline {
+               font-weight: normal;
+               font-weight: 400;
+               text-decoration: none;
+          }
+
+          /* FONT COLORS */
+          .textColorDark {
+               color: #1E2332;
+          }
+
+          .textColorBlue {
+               color: #00A5FF;
+          }
+
+          .textColorAmber {
+               color: #FFBE32;
+          }
+
+          .textColorGray {
+               color: #787C84;
+          }
+
+          .textColorWhite {
+               color: #FFFFFF;
+          }
+
+          /* BUTTON */
+          .button {
+               line-height: 1;
+               color: #FFFFFF;
+               padding: 0 40px;
+               text-decoration: none;
+               outline: none;
+               border-radius: 30px;
+               max-width: 300px;
+               margin: 0 auto;
+          }
+
+          .button--dark {
+               background: #1E2332;
+          }
+
+          .button--amber {
+               background-color: #FFBE32;
+          }
+
+          .button-link {
+               text-decoration: none;
+          }
+
+          .button-text {
+               color: #FFFFFF;
+               text-decoration: none;
+               font-family: 'Avenir', "Asap", Helvetica, sans-serif;
+               font-size: 18px;
+               line-height: 1;
+               font-weight: bold;
+               font-weight: 600;
+               text-decoration: none;
+          }
+
+          /* LAYOUT */
+          .wrapper {
+               max-width: 600px;
+          }
+
+          .table--half {
+               width: 50%;
+               float: left;
+          }
+
+          .table--oneThird {
+               width: 33.333334%;
+               float: left;
+          }
+
+          .table--TwoThirds {
+               width: 66.666667%;
+               float: left;
+          }
+
+          /* HEADER */
+          .header {
+               padding: 40px 20px 0px;
+               background: #FFBE32;
+          }
+
+          .header-tockLogoImage {
+               display: block;
+               color: #FFFFFF;
+               font-size: 16px;
+          }
+
+          .header-heroImage {
+               padding-bottom: 20px;
+          }
+
+          /* HERO */
+          .hero {
+               padding: 20px 20px 0;
+               background: #FFBE32;
+          }
+
+          .hero-headline {
+               padding: 20px 0 10px;
+               display: block;
+          }
+
+          .hero-image--top {
+               padding-top: 40px;
+          }
+
+          .hero-image--bottom {
+               padding-bottom: 40px;
+          }
+
+          /* MESSAGE */
+          .message {
+               padding: 0 20px;
+          }
+
+          .message-text {
+               padding-bottom: 10px;
+          }
+
+          /* FOOTER */
+          .footer {
+               padding: 80px 20px 40px;
+          }
+
+          .footer-socialLinks {
+               padding-bottom: 20px;
+          }
+
+          .footer-socialLink {
+               float: center;
+          }
+
+          /* PREHEADER */
+          .preheader {
+               display: none;
+               font-size: 1px;
+               color: #FFFFFF;
+               line-height: 1px;
+               max-height: 0px;
+               max-width: 0px;
+               opacity: 0;
+               overflow: hidden;
+          }
+
+          /* MOBILE STYLES */
+          @media screen and (max-width: 600px) {
+
+               /* DEVICE-SPECIFIC RESET */
+               div[style*="margin: 16px 0;"] {
+                    margin: 0 !important;
+               }
+
+               /* ANDROID CENTER FIX */
+
+               /* VARIABLES */
+               .mobileHide {
+                    display: none !important;
+               }
+
+               .desktopHide {
+                    display: table-cell !important;
+               }
+
+               .mobile-textAlignCenter {
+                    text-align: center !important;
+               }
+
+               /* TYPOGRAPHY */
+               .h1 {
+                    font-size: 42px !important;
+                    line-height: 42px !important;
+               }
+
+               .h2 {
+                    font-size: 20px !important;
+                    line-height: 24px !important;
+               }
+
+               .textBig {
+                    font-size: 18px !important;
+                    line-height: 27px !important;
+               }
+
+               .textMedium {
+                    font-size: 16px !important;
+                    line-height: 24px !important;
+                    text-align: left;
+               }
+
+               .textSmall {
+                    font-size: 14px !important;
+                    line-height: 21px !important;
+               }
+
+               /* BUTTON */
+               .button {
+                    display: block !important;
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+               }
+
+               .mobile-buttonContainer {
+                    width: 100% !important;
+               }
+
+               .button-text {
+                    font-size: 16px !important;
+               }
+
+               /* LAYOUT */
+               .wrapper {
+                    width: 100% !important;
+                    max-width: 100% !important;
+               }
+
+               .responsive-table {
+                    width: 100% !important;
+               }
+
+               /* HERO */
+               .hero-image--top img,
+               .hero-image--bottom img {
+                    width: 100% !important;
+                    height: auto !important;
+               }
+          }
+     </style>
+
+</head>
+
+<body style="margin: 0 !important; padding: 0 !important;">
+
+     <!--[if mso]>
+<style type="text/css">
+body, table, td, div, span, p, .button-text {font-family: Asap, Helvetica, sans-serif !important;}
+</style>
+<![endif]-->
+
+     <!-- HIDDEN PREHEADER TEXT -->
+     <div class="preheader">
+          FunGames
+     </div>
+
+     <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mainTable">
+
+          <!-- HEADER -->
+          <tr>
+               <td align="center" class="header">
+                    <!--[if (gte mso 9)|(IE)]>
+      <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+      <tr>
+      <td align="center" valign="top" width="600">
+      <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="wrapper">
+                         <tr>
+                              <td align="center" valign="top">
+                                   <img
+                                             src="../../../Assets/img/Logo/logo-no-bg.png"
+                                             width="86" height="40" alt="Tock" border="0"
+                                             class="header-tockLogoImage">
+                              </td>
+                         </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
+               </td>
+          </tr>
+
+          <!-- HERO -->
+          <tr>
+               <td align="center" class="hero">
+                    <!--[if (gte mso 9)|(IE)]>
+      <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+      <tr>
+      <td align="center" valign="top" width="600">
+      <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="wrapper">
+                         <tr>
+                              <td align="center" valign="top" class="hero-headline">
+                                   <span class="h1 textColorWhite">Privacy Police</span>
+                              </td>
+                         </tr>
+                         <tr>
+                              <td align="center" valign="top">
+                                        <table border="0" cellspacing="0" cellpadding="0"
+                                             class="mobile-buttonContainer">
+                                             <tr>
+                                                  <td align="center" valign="center" width="100%"
+                                                       class="button button--dark">
+                                                       <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                            <tr>
+                                                                 <td style="height:18px; line-height:18px;">&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                 <td align="center" valign="center">
+                                                                      <span class="button-text">FunGames</span>
+                                                                 </td>
+                                                            </tr>
+                                                            <tr>
+                                                                 <td style="height:18px; line-height:18px;">&nbsp;</td>
+                                                            </tr>
+                                                       </table>
+                                                  </td>
+                                             </tr>
+                                        </table>
+                              </td>
+                         </tr>
+                         <tr>
+                              <td align="center" valign="top" class="hero-image--top">
+                                   <img src="https://storage.googleapis.com/tock-public-assets/images-email-campaigns/chicago/skyline-chicago-top.png"
+                                        width="600" height="215" alt="Chicago Skyline">
+                              </td>
+                         </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
+               </td>
+          </tr>
+
+          <!-- MESSAGE -->
+          <tr>
+               <td align="center" class="message">
+                    <!--[if (gte mso 9)|(IE)]>
+      <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+      <tr>
+      <td align="center" valign="top" width="600">
+      <![endif]-->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="wrapper">
+                         <tr>
+                              <td align="center" valign="top" class="hero-image--bottom">
+                                   <img src="https://storage.googleapis.com/tock-public-assets/images-email-campaigns/chicago/skyline-chicago-bottom.png"
+                                        width="600" height="85" alt="Chicago Skyline">
+                              </td>
+                         </tr>
+                         <tr>
+                              <td align="center" class="message-text">
+                                   <div class="h2">Privacy Policy</div>
+                                   <div class="textMedium">
+                                        Your privacy is important to us. It is <b>FunGames's</b> policy to respect your
+                                        privacy regarding any information we may collect from you across our website,
+                                        FunGames, and other sites we own and operate.
+                                   </div>
+                                   <br>
+                                   <div class="textMedium">
+                                        We only ask for personal information when we truly need it to provide a service
+                                        to you. We collect it by fair and lawful means, with your knowledge and consent.
+                                        We also let you know why we’re collecting it and how it will be used.
+                                   </div>
+                                   <br>
+                                   <div class="textMedium">
+                                        We only retain collected information for as long as necessary to provide you
+                                        with your requested service. What data we store, we’ll protect within
+                                        commercially acceptable means to prevent loss and theft, as well as unauthorised
+                                        access, disclosure, copying, use or modification.
+                                   </div>
+                                   <br>
+                                   <div class="textMedium">
+                                        We don’t share any personally identifying information publicly or with
+                                        third-parties, except when required to by law.
+                                   </div>
+                                   <br>
+                                   <div class="textMedium">
+                                        Our website may link to external sites that are not operated by us. Please be
+                                        aware that we have no control over the content and practices of these sites, and
+                                        cannot accept responsibility or liability for their respective privacy policies.
+                                   </div>
+                                   <br>
+                                   <div class="textMedium">
+                                        You are free to refuse our request for your personal information, with the
+                                        understanding that we may be unable to provide you with some of your desired
+                                        services.
+                                   </div>
+                                   <br>
+                                   <div class="textMedium">
+                                        Your continued use of our website will be regarded as acceptance of our
+                                        practices around privacy and personal information. If you have any questions
+                                        about how we handle user data and personal information, feel free to contact us.
+                                   </div>
+                                   <br><br>
+                                   <div class="h2">Cookie Policy for FunGames</div>
+                                   <div class="textMedium">
+                                        This is the Cookie Policy for <b>FunGames</b>, accessible from URL
+                                   </div>
+                                   <br>
+                                   <div class="h2" style="text-align: left;">What Are Cookies</div>
+                                   <br>
+                                   <div class="textMedium">
+                                        As is common practice with almost all professional websites this site uses
+                                        cookies, which are tiny files that are downloaded to your computer, to improve
+                                        your experience. This page describes what information they gather, how we use it
+                                        and why we sometimes need to store these cookies. We will also share how you can
+                                        prevent these cookies from being stored however this may downgrade or 'break'
+                                        certain elements of the sites functionality.
+                                   </div>
+                                   <br>
+                                   <div class="h2" style="text-align: left;">How We Use Cookies</div>
+                                   <br>
+                                   <div class="textMedium">
+                                        We use cookies for a variety of reasons detailed below. Unfortunately in most
+                                        cases there are no industry standard options for disabling cookies without
+                                        completely disabling the functionality and features they add to this site. It is
+                                        recommended that you leave on all cookies if you are not sure whether you need
+                                        them or not in case they are used to provide a service that you use.
+                                   </div>
+                                   <br>
+                                   <div class="h2" style="text-align: left;">Disabling Cookies</div>
+                                   <br>
+                                   <div class="textMedium">
+                                        You can prevent the setting of cookies by adjusting the settings on your browser
+                                        (see your browser Help for how to do this). Be aware that disabling cookies will
+                                        affect the functionality of this and many other websites that you visit.
+                                        Disabling cookies will usually result in also disabling certain functionality
+                                        and features of the this site. Therefore it is recommended that you do not
+                                        disable cookies.
+                                   </div>
+                                   <br>
+                                   <div class="h2" style="text-align: left;">More Information</div>
+                                   <br>
+                                   <div class="textMedium">
+                                        Hopefully that has clarified things for you and as was previously mentioned if
+                                        there is something that you aren't sure whether you need or not it's usually
+                                        safer to leave cookies enabled in case it does interact with one of the features
+                                        you use on our site.
+                                   </div>
+                                   <br>
+                                   <div class="textMedium">
+                                        This policy is effective as of <b>May 2022.</b>
+                                   </div>
+                              </td>
+                         </tr>
+                    </table>
+
+               </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+               <td align="center" class="footer">
+                    <!--[if (gte mso 9)|(IE)]>
+      <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+      <tr>
+      <td align="center" valign="top" width="600">
+      <![endif]-->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="wrapper">
+                         <tr>
+                              <td align="center" class="footer-socialLinks">
+                                   <table width="210" border="0" cellspacing="0" cellpadding="0" align="center">
+                                        <tr>
+                                             <td width="33%" align="center" class="footer-socialLink">
+                                                  <a href="https://www.instagram.com/fungamesid/"><img
+                                                            src="https://storage.googleapis.com/tock-public-assets/images-email-template/icon-instagram.png"
+                                                            alt="Instagram" width="60" height="60"
+                                                            class="footer-socialLinkImage"></a>
+                                             </td>
+                                        </tr>
+                                   </table>
+                              </td>
+                         </tr>
+                         <tr>
+                              <td align="center" class="textSmall textColorGray">
+                                   &copy; 2022 FunGames
+                              </td>
+                         </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
+               </td>
+          </tr>
+     </table>
+</body>
+</body>
+
+</html>
