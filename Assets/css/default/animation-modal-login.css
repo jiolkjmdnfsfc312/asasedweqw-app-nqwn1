@@ -87,7 +87,7 @@ img {
   transition: all .3s;
 
   /*=== Effect 1 ===*/
-  transform: translateY(30%);
+  transform: translateY(80%);
 
   /*=== Effect 2 ===*/
   /* transform: scale(.5) translateY(10%); */
