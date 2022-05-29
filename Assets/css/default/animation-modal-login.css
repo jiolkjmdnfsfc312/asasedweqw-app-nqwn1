@@ -118,6 +118,7 @@ transform-origin: 50% 100%; */
   font-size: var(--big-font-size);
   color: var(--title-color);
   font-weight: 500;
+  color: black;
 }
 
 .modal__description {
