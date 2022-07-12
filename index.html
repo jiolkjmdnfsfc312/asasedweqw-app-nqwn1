@@ -35,6 +35,8 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3137864278780348"
      crossorigin="anonymous"></script>
 
+     <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
+
   <!-- Hotjar Tracking Code for FunGames -->
   <script>
     (function(h,o,t,j,a,r){
@@ -418,6 +420,15 @@
                 };
             }
         }, 400);
+
+        const beamsClient = new PusherPushNotifications.Client({
+    instanceId: '6f508e00-629d-4b31-b9f4-fd9f2dabf4dd',
+  });
+
+  beamsClient.start()
+    .then(() => beamsClient.addDeviceInterest('hello'))
+    .then(() => console.log('Successfully registered and subscribed!'))
+    .catch(console.error);
   </script>
   <!-- Disabled Href No Internet -->
 
